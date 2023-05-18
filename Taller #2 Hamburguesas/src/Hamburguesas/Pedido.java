@@ -50,7 +50,7 @@ public class Pedido {
 		return 0;
 	}
 	
-	private String generTextoFactura() {
+	public String generTextoFactura() {
 		return null;
 	}
 	
