@@ -17,9 +17,15 @@ import Hamburguesas.ProductoMenu;
 import Hamburguesas.Pedido;
 import Hamburguesas.Combo;
 
+import Excepciones.*;
+
 public class Restaurante {
 	
 	//Atributos
+	private static IngredienteRepetidoException ingRE;
+	private static ProductoRepetidoException proRE;
+	private static HamburguesaException hamRE;
+	
 	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
 	private Pedido pedidoEnCurso;
 	private static ArrayList<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
@@ -378,6 +384,15 @@ public class Restaurante {
 			int valor = parseInt(valorIngrediente);
 			Ingrediente nuevo = new Ingrediente(nombreIngrediente, valor);
 			
+			//Cambios
+			try {
+				ingRE.crearIngrEx(nombreIngrediente, valor);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//
+			
 			ingredientes.add(nuevo);
 				
 			//int costoAdicional = (int)valorIngrediente;
@@ -401,6 +416,15 @@ public class Restaurante {
 			String valorProducto = partes[1];
 			int valor = parseInt(valorProducto);
 			ProductoMenu nuevo = new ProductoMenu(nombreProducto, valor);
+			
+			//Cambios
+			try {
+				proRE.crearProdEx(nombreProducto, valor);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//
 			
 			menuBase.add(nuevo);
 			
