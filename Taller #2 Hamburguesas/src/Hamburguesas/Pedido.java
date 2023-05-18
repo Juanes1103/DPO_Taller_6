@@ -2,10 +2,13 @@ package Hamburguesas;
 
 import java.io.File;
 import Hamburguesas.Producto;
+import Excepciones.PedidoException;
 
 public class Pedido {
 	
 	//Atributos
+	private PedidoException pedE;
+	
 	private static int numeroPedidos;
 	private int idPedido;
 	private String nombreCliente;
@@ -25,6 +28,13 @@ public class Pedido {
 	}
 	
 	public void agregarProducto(Producto nuevoItem) {
+		
+		try {
+			pedE.crearPedExc(getPrecioTotalPedido());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
