@@ -11,12 +11,8 @@ import Hamburguesas.Producto;
 public class PedidoTest {
 
 	private Pedido ped;
-	private Producto prod;
-	private File archivo;
-	private String nom;
-	private String dir;
 	
-	public void setUp() throws Exception{
+	public void setUp(String nom, String dir) throws Exception{
 		
 		ped = new Pedido(nom, dir);
 		
@@ -28,7 +24,7 @@ public class PedidoTest {
 		
 	}
 	
-	public void testAgregarProducto() {
+	public void testAgregarProducto(Producto prod) {
 		
 		assertTimeout(Duration.ofMinutes(1), () -> {ped.agregarProducto(prod);});
 		
@@ -40,7 +36,7 @@ public class PedidoTest {
 		
 	}
 	
-	public void testGuardarFactura() {
+	public void testGuardarFactura(File archivo) {
 		
 		assertTimeout(Duration.ofMinutes(1), () -> {ped.guardarFactura(archivo);});
 		

@@ -10,22 +10,20 @@ import Hamburguesas.*;
 public class ProductMenuTest {
 	
 	private ProductoMenu proMen;
-	private String nombre;
-	private int valor;
 	
-	public void setUp() throws Exception {
+	public void setUp(String nombre, int valor) throws Exception {
 		
 		proMen = new ProductoMenu(nombre, valor);
 		
 	}
 	
-	public void testGetNombre() {
+	public void testGetNombre(String nombre) {
 		
 		assertTrue(nombre == proMen.getNombres());
 		
 	}
 	
-	public void testGetPrecios() {
+	public void testGetPrecios(int valor) {
 		
 		assertTrue(valor == proMen.getPrecios());
 		

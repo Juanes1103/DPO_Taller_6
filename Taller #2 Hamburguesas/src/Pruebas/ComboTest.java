@@ -11,12 +11,10 @@ import Hamburguesas.Producto;
 public class ComboTest {
 
 	private Combo com;
-	private String nombre;
-	private double precio;
 	
 	private Producto prod;
 	
-	public void setUp() throws Exception {
+	public void setUp(String nombre, double precio) throws Exception {
 		
 		com = new Combo(nombre, precio);
 		
@@ -28,13 +26,13 @@ public class ComboTest {
 		
 	}
 	
-	public void testGetNombre() {
+	public void testGetNombre(String nombre) {
 		
 		assertTrue(nombre == com.getNombre());
 		
 	}
 	
-	public void testGetPrecio() {
+	public void testGetPrecio(int precio) {
 		
 		assertTrue(precio == com.getPrecio());
 		
